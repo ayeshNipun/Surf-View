@@ -23,7 +23,7 @@
 
                 <ul class="navbar-nav ml-auto smooth-scroll">
                     <li class="nav-item">
-                        <a class="nav-link" href="#best-features">Login</a>
+                        <a class="nav-link" href="#best-features">Features</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#examples">Sign Up</a>

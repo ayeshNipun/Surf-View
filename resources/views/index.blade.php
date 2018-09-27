@@ -1,92 +1,3 @@
-{{-- <!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            
-            <div class="content">
-                <div class="title m-b-md">
-                    C H A T T E R
-                </div>
-                    @if (Route::has('login'))
-                        <div class="links">
-                            @auth
-                                <a href="{{ url('/home') }}">Home</a>
-                            @else
-                                <a href="{{ route('login') }}">Login</a>
-                                <a href="{{ route('register') }}">Register</a>
-                            @endauth
-                        </div>
-                    @endif
-                </div>
-            </div>
-        </div>
-    </body>
-</html> --}}
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -111,6 +22,8 @@
 </head>
 
 <body>
+
+    @include('includes.navbar')
 
     <button id="myBtn" class="btn btn-outline-dark scroll-top" title="Go to top"> <i class="fa fa-arrow-up"></i> </button>
     <script>
@@ -187,11 +100,119 @@
     <main class="mt-5">
         <div class="container">
 
+            
+            <!--Section: Contact-->
+            <section id="join">
+<br><br><br><br>
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold text-center txtLogin">Join Us</h2>
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-5 logindiv">
+                        <h3 class="mb-5 font-weight-bold text-center">Log In</h3>
+                        <!-- Form contact -->
+                            <form class="p-5" method="POST" action="{{ route('login') }}">
+                                @csrf
+                                
+                                <div class="md-form form-sm"> <i class="fa fa-at prefix grey-text"></i>
+                                    <input id="email" name="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-sm" required>
+                                    <label for="email">E Mail</label>
+
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+
+                                <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
+                                    <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-sm" required>
+                                    <label for="password">Password</label>
+
+                                    @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                </div>
+
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary">{{ __('Login') }} <i class="fa fa-sign-in-alt ml-1"></i></button>
+
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                </div>
+        
+                    </form>
+                    </div>
+                    <!--Grid column-->
+                     <div class="col-md-2"></div>
+                    <div class="col-md-5 signupdiv">
+                            <h3 class="mb-5 font-weight-bold text-center">Sign Up</h3>
+                            <form class="p-5" method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    
+                                    
+                                    <div class="md-form form-sm"> <i class="fa fa-user prefix grey-text"></i>
+                                        <input type="text" name="name" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('name') }}" required>
+                                        <label for="name">Your Name</label>
+    
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+    
+                                    <div class="md-form form-sm"> <i class="fa fa-at prefix grey-text"></i>
+                                        <input type="email" name="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('email') }}" required>
+                                        <label for="email">Your Email</label>
+    
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+    
+                                    <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
+                                        <input type="password" name="password" id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-sm" required>
+                                        <label for="password">Password</label>
+    
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+    
+                                    <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
+                                        <input type="password" name="password_confirmation" id="password-confirm" class="form-control form-control-sm" required>
+                                        <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                                    </div>
+    
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary">{{ __('Signup') }} <i class="fa fa-user-plus ml-1"></i></button>
+                                    </div>  
+                                    
+                            <!-- Form contact -->
+                        </form>
+                    </div>
+                </div>
+                <!--Grid row-->
+
+            </section>
+            <!--Section: Join-->
+<br><br><br><br><br><br><br>
             <!--Section: Best Features-->
             <section id="best-features" class="text-center">
-
+                <br><br><br><br>
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Best Features</h2>
+                <h2 class="mb-5 font-weight-bold">Features of C H A T T E R</h2>
 
                 <!--Grid row-->
                 <div class="row d-flex justify-content-center mb-4">
@@ -200,9 +221,7 @@
                     <div class="col-md-8">
 
                         <!-- Description -->
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi voluptate hic provident nulla repellat
-                            facere esse molestiae ipsa labore porro minima quam quaerat rem, natus repudiandae debitis est
-                            sit pariatur.</p>
+                        
 
                     </div>
                     <!--Grid column-->
@@ -215,31 +234,47 @@
 
                     <!--Grid column-->
                     <div class="col-md-4 mb-5">
-                        <i class="fa fa-camera-retro fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Experience</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                            assumenda deleniti hic.</p>
+                        <i class="fa fa-lock fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Security</h4>
                     </div>
                     <!--Grid column-->
 
                     <!--Grid column-->
                     <div class="col-md-4 mb-1">
-                        <i class="fa fa-heart fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Happiness</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                            assumenda deleniti hic.</p>
+                        <i class="fa fa-users fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">User Friendly</h4>
                     </div>
                     <!--Grid column-->
 
                     <!--Grid column-->
                     <div class="col-md-4 mb-1">
-                        <i class="fa fa-bicycle fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Adventure</h4>
-                        <p class="grey-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reprehenderit maiores nam, aperiam minima
-                            assumenda deleniti hic.</p>
+                        <i class="fa fa-share-square fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Easy Document Sharing</h4>
+                    </div>
+                    <!--Grid column-->
+                </div>
+<br><br><br><br>
+                <div class="row">
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-5">
+                        <i class="fa fa-comment fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Reliable Messaging</h4>
                     </div>
                     <!--Grid column-->
 
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-1">
+                        <i class="fa fa-phone fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Free and Clear Voice Chat</h4>
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-4 mb-1">
+                        <i class="fa fa-tachometer fa-4x orange-text"></i>
+                        <h4 class="my-4 font-weight-bold">Low Data Usage</h4>
+                    </div>
+                    <!--Grid column-->
                 </div>
                 <!--Grid row-->
 
@@ -250,7 +285,7 @@
 
             <!--Section: Examples-->
             <section id="examples" class="text-center">
-
+<br><br><br><br>
                 <!-- Heading -->
                 <h2 class="mb-5 font-weight-bold">Stunning Examples</h2>
 
@@ -453,113 +488,6 @@
             <!--Section: Gallery-->
 
             <hr class="my-5">
-
-            <!--Section: Contact-->
-            <section id="join">
-
-                <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold text-center txtLogin">Join Us</h2>
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-lg-6 col-md-6 logindiv">
-                        <h3 class="mb-5 font-weight-bold text-center">Log In</h3>
-                        <!-- Form contact -->
-                            <form class="p-5" method="POST" action="{{ route('login') }}">
-                                @csrf
-                                
-                                <div class="md-form form-sm"> <i class="fa fa-at prefix grey-text"></i>
-                                    <input id="email" name="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-sm" required>
-                                    <label for="email">E Mail</label>
-
-                                    @if ($errors->has('email'))
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $errors->first('email') }}</strong>
-                                        </span>
-                                    @endif
-                                </div>
-
-                                <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
-                                    <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-sm" required>
-                                    <label for="password">Password</label>
-
-                                    @if ($errors->has('password'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('password') }}</strong>
-                                            </span>
-                                        @endif
-                                </div>
-
-                                <div class="text-center mt-4">
-                                    <button type="submit" class="btn btn-primary">{{ __('Login') }} <i class="fa fa-sign-in-alt ml-1"></i></button>
-
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                </div>
-        
-                    </form>
-                    </div>
-                    <!--Grid column-->
-                     
-                    <div class="col-lg-6 col-md-6 signupdiv">
-                            <h3 class="mb-5 font-weight-bold text-center">Sign Up</h3>
-                            <form class="p-5" method="POST" action="{{ route('register') }}">
-                                    @csrf
-                                    
-                                    
-                                    <div class="md-form form-sm"> <i class="fa fa-user prefix grey-text"></i>
-                                        <input type="text" name="name" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('name') }}" required>
-                                        <label for="name">Your Name</label>
-    
-                                        @if ($errors->has('name'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('name') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-    
-                                    <div class="md-form form-sm"> <i class="fa fa-at prefix grey-text"></i>
-                                        <input type="email" name="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('email') }}" required>
-                                        <label for="email">Your Email</label>
-    
-                                        @if ($errors->has('email'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('email') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-    
-                                    <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
-                                        <input type="password" name="password" id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-sm" required>
-                                        <label for="password">Password</label>
-    
-                                        @if ($errors->has('password'))
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $errors->first('password') }}</strong>
-                                            </span>
-                                        @endif
-                                    </div>
-    
-                                    <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
-                                        <input type="password" name="password_confirmation" id="password-confirm" class="form-control form-control-sm" required>
-                                        <label for="password-confirm">{{ __('Confirm Password') }}</label>
-                                    </div>
-    
-                                    <div class="text-center mt-4">
-                                        <button type="submit" class="btn btn-primary">{{ __('Signup') }} <i class="fa fa-user-plus ml-1"></i></button>
-                                    </div>  
-                                    
-                            <!-- Form contact -->
-                        </form>
-                    </div>
-                </div>
-                <!--Grid row-->
-
-            </section>
-            <!--Section: Join-->
 
         </div>
     </main>
