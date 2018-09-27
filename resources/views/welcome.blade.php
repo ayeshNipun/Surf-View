@@ -112,65 +112,29 @@
 
 <body>
 
+    <button id="myBtn" class="btn btn-outline-dark scroll-top" title="Go to top"> <i class="fa fa-arrow-up"></i> </button>
+    <script>
+            // When the user scrolls down 20px from the top of the document, show the button
+            window.onscroll = function() {scrollFunction()};
+            
+            function scrollFunction() {
+                if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                    document.getElementById("myBtn").style.display = "block";
+                } else {
+                    document.getElementById("myBtn").style.display = "none";
+                }
+            }
+            
+            // When the user clicks on the button, scroll to the top of the document
+                $(".scroll-top").click(function() {
+                $('html,body').animate({
+                    scrollTop: $(".view").offset().top},
+                    'slow');
+                });
+            </script>
     <!--Main Navigation-->
     <header>
-
-        <!--Navbar-->
-        {{-- <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-            <div class="container">
-
-                <!-- Navbar brand -->
-                <a class="navbar-brand" href="#">Navbar</a>
-
-                <!-- Collapse button -->
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav" aria-controls="basicExampleNav"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <!-- Collapsible content -->
-                <div class="collapse navbar-collapse" id="basicExampleNav">
-
-                    <!-- Links -->
-                    <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#intro">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#best-features">Features</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#examples">Examples</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#gallery">Gallery</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <!-- Links -->
-
-                    <!-- Social Icon  -->
-                    <ul class="navbar-nav nav-flex-icons">
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-facebook"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-twitter"></i></a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-instagram"></i></a>
-                        </li>
-                    </ul>
-
-                </div>
-                <!-- Collapsible content -->
-
-            </div>
-        </nav> --}}
-        <!--/.Navbar-->
-
+ 
         <!--Mask-->
         <div id="intro" class="view">
 
@@ -180,7 +144,7 @@
 
                     <div class="row d-flex justify-content-center text-center">
 
-                        <div class="col-md-10">
+                        <div class="col-ml-8">
 
                             <!-- Heading -->
                             <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">C H A T T E R</h2>
@@ -189,9 +153,19 @@
                             <hr class="hr-light">
 
                             <!-- Description -->
-                            <h4 class="white-text my-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti consequuntur.</h4>
-                            <button type="button" class="btn btn-outline-white">Read more<i class="fa fa-book ml-2"></i></button>
+                            <h4 class="white-text my-4">
+                                
+                            </h4>
+                            <button type="button" class="btn btn-outline-white scroll-login">Sign Up<i class="fa fa-user-plus ml-2"></i></button>
+                            {{-- <a type="button" class="btn btn-outline-white" href="#best-features">Features</a> --}}
 
+                            <script>
+                                $(".scroll-login").click(function() {
+                                $('html,body').animate({
+                                    scrollTop: $(".bf").offset().top},
+                                    'slow');
+                                });
+                            </script>
                         </div>
 
                     </div>
@@ -272,7 +246,7 @@
             <hr class="my-5">
 
             <!--Section: Examples-->
-            <section id="examples" class="text-center">
+            <section id="examples" class="text-center bf">
 
                 <!-- Heading -->
                 <h2 class="mb-5 font-weight-bold">Stunning Examples</h2>
@@ -572,7 +546,7 @@
         </div>
     </main>
     <!--Main layout-->
-
+{{-- 
     <!--Footer-->
     <footer class="page-footer font-small unique-color-dark pt-0">
 
@@ -705,53 +679,30 @@
         <!--/.Copyright-->
 
     </footer>
-    <!--/.Footer-->
+    <!--/.Footer--> --}}
 
 
     <!-- SCRIPTS -->
     <!-- JQuery -->
-    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src= {!! asset('js/jquery-3.3.1.min.js') !!}></script>
     <!-- Bootstrap tooltips -->
-    <script type="text/javascript" src="js/popper.min.js"></script>
+    <script type="text/javascript" src= {!! asset('js/popper.min.js') !!}></script>
     <!-- Bootstrap core JavaScript -->
-    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src= {!! asset('js/bootstrap.min.js') !!}></script>
     <!-- MDB core JavaScript -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
+    <script type="text/javascript" src= {!! asset('js/mdb.min.js') !!}></script>
 
     <!--Google Maps-->
     <script src="https://maps.google.com/maps/api/js"></script>
 
-    <!-- Google Maps settings -->
-    <script>
-        // Regular map
-        function regular_map() {
-            var var_location = new google.maps.LatLng(40.725118, -73.997699);
-
-            var var_mapoptions = {
-                center: var_location,
-                zoom: 14
-            };
-
-            var var_map = new google.maps.Map(document.getElementById("map-container"),
-                var_mapoptions);
-
-            var var_marker = new google.maps.Marker({
-                position: var_location,
-                map: var_map,
-                title: "New York"
-            });
-        }
-
-        // Initialize maps
-        google.maps.event.addDomListener(window, 'load', regular_map);
-    </script>
+    
 
     <!-- Carousel options -->
     <script>
         $('.carousel').carousel({
             interval: 3000,
         })
-    </script>
+    </script> 
 </body>
 
 </html>
