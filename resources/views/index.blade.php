@@ -99,7 +99,7 @@
     <link href="{!! asset('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
 
-    <title>Material Design Bootstrap</title>
+    <title>{{ config('app.name') }}</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -156,13 +156,16 @@
                             <h4 class="white-text my-4">
                                 
                             </h4>
-                            <button type="button" class="btn btn-outline-white scroll-login">Sign Up<i class="fa fa-user-plus ml-2"></i></button>
-                            {{-- <a type="button" class="btn btn-outline-white" href="#best-features">Features</a> --}}
+                            <button type="button" class="btn btn-outline-white scroll-join">
+                                Join Us
+                                <i class="fa fa-user-plus ml-2"></i> 
+                            </button>
+                            
 
                             <script>
-                                $(".scroll-login").click(function() {
+                                $(".scroll-join").click(function() {
                                 $('html,body').animate({
-                                    scrollTop: $(".bf").offset().top},
+                                    scrollTop: $("#join").offset().top},
                                     'slow');
                                 });
                             </script>
@@ -246,7 +249,7 @@
             <hr class="my-5">
 
             <!--Section: Examples-->
-            <section id="examples" class="text-center bf">
+            <section id="examples" class="text-center">
 
                 <!-- Heading -->
                 <h2 class="mb-5 font-weight-bold">Stunning Examples</h2>
@@ -452,101 +455,116 @@
             <hr class="my-5">
 
             <!--Section: Contact-->
-            <section id="contact">
+            <section id="join">
 
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold text-center">Contact us</h2>
+                <h2 class="mb-5 font-weight-bold text-center txtLogin">Join Us</h2>
 
                 <!--Grid row-->
                 <div class="row">
 
                     <!--Grid column-->
-                    <div class="col-lg-5 col-md-12">
-
+                    <div class="col-lg-6 col-md-6 logindiv">
+                        <h3 class="mb-5 font-weight-bold text-center">Log In</h3>
                         <!-- Form contact -->
-                        <form class="p-5">
+                            <form class="p-5" method="POST" action="{{ route('login') }}">
+                                @csrf
+                                
+                                <div class="md-form form-sm"> <i class="fa fa-at prefix grey-text"></i>
+                                    <input id="email" name="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-sm" required>
+                                    <label for="email">E Mail</label>
 
-                          <div class="md-form form-sm"> <i class="fa fa-user prefix grey-text"></i>
-                            <input type="text" id="form3" class="form-control form-control-sm">
-                            <label for="form3">Your name</label>
-                          </div>
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
 
-                          <div class="md-form form-sm"> <i class="fa fa-envelope prefix grey-text"></i>
-                            <input type="text" id="form2" class="form-control form-control-sm">
-                            <label for="form2">Your email</label>
-                          </div>
+                                <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
+                                    <input id="password" name="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-sm" required>
+                                    <label for="password">Password</label>
 
-                          <div class="md-form form-sm"> <i class="fa fa-tag prefix grey-text"></i>
-                            <input type="text" id="form32" class="form-control form-control-sm">
-                            <label for="form34">Subject</label>
-                          </div>
+                                    @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                </div>
 
-                          <div class="md-form form-sm"> <i class="fa fa-pencil prefix grey-text"></i>
-                            <textarea type="text" id="form8" class="md-textarea form-control form-control-sm" rows="4"></textarea>
-                            <label for="form8">Your message</label>
-                          </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary">{{ __('Login') }} <i class="fa fa-sign-in-alt ml-1"></i></button>
 
-                          <div class="text-center mt-4">
-                            <button class="btn btn-primary">Send <i class="fa fa-paper-plane-o ml-1"></i></button>
-                          </div>
+                                    <a class="btn btn-link" href="{{ route('password.request') }}">
+                                        {{ __('Forgot Your Password?') }}
+                                    </a>
+                                </div>
+        
+                    </form>
+                    </div>
+                    <!--Grid column-->
+                     
+                    <div class="col-lg-6 col-md-6 signupdiv">
+                            <h3 class="mb-5 font-weight-bold text-center">Sign Up</h3>
+                            <form class="p-5" method="POST" action="{{ route('register') }}">
+                                    @csrf
+                                    
+                                    
+                                    <div class="md-form form-sm"> <i class="fa fa-user prefix grey-text"></i>
+                                        <input type="text" name="name" id="name" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('name') }}" required>
+                                        <label for="name">Your Name</label>
+    
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('name') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+    
+                                    <div class="md-form form-sm"> <i class="fa fa-at prefix grey-text"></i>
+                                        <input type="email" name="email" id="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }} form-control-sm" value="{{ old('email') }}" required>
+                                        <label for="email">Your Email</label>
+    
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('email') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+    
+                                    <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
+                                        <input type="password" name="password" id="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }} form-control-sm" required>
+                                        <label for="password">Password</label>
+    
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $errors->first('password') }}</strong>
+                                            </span>
+                                        @endif
+                                    </div>
+    
+                                    <div class="md-form form-sm"> <i class="fa fa-key prefix grey-text"></i>
+                                        <input type="password" name="password_confirmation" id="password-confirm" class="form-control form-control-sm" required>
+                                        <label for="password-confirm">{{ __('Confirm Password') }}</label>
+                                    </div>
+    
+                                    <div class="text-center mt-4">
+                                        <button type="submit" class="btn btn-primary">{{ __('Signup') }} <i class="fa fa-user-plus ml-1"></i></button>
+                                    </div>  
+                                    
+                            <!-- Form contact -->
                         </form>
-                        <!-- Form contact -->
-
                     </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-lg-7 col-md-12">
-
-                        <!--Grid row-->
-                        <div class="row text-center">
-
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-12 mb-3">
-
-                                <p>
-                                    <i class="fa fa-map fa-1x mr-2 grey-text"></i>New York, NY 10012</p>
-
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-6 mb-3">
-
-                                <p>
-                                    <i class="fa fa-building fa-1x mr-2 grey-text"></i>Mon - Fri, 8:00-22:00</p>
-
-                            </div>
-                            <!--Grid column-->
-
-                            <!--Grid column-->
-                            <div class="col-lg-4 col-md-6 mb-3">
-
-                                <p>
-                                    <i class="fa fa-phone fa-1x mr-2 grey-text"></i>+ 01 234 567 89</p>
-
-                            </div>
-                            <!--Grid column-->
-
-                        </div>
-                        <!--Grid row-->
-
-                        <!--Google map-->
-                        <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px"></div>
-
-                    </div>
-                    <!--Grid column-->
-
                 </div>
                 <!--Grid row-->
 
             </section>
-            <!--Section: Contact-->
+            <!--Section: Join-->
 
         </div>
     </main>
     <!--Main layout-->
-{{-- 
+
     <!--Footer-->
     <footer class="page-footer font-small unique-color-dark pt-0">
 
@@ -679,7 +697,7 @@
         <!--/.Copyright-->
 
     </footer>
-    <!--/.Footer--> --}}
+    <!--/.Footer--> 
 
 
     <!-- SCRIPTS -->

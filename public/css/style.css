@@ -41,3 +41,14 @@ header,
   padding: 15px;
   border-radius: 50%;
 }
+
+.logindiv{
+    border: 2px solid rgb(65, 63, 63);
+    border-radius: 12px;
+}
+
+.signupdiv{
+  border: 2px solid rgb(65, 63, 63);
+  border-radius: 12px;
+}
+
