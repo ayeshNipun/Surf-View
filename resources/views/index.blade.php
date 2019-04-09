@@ -10,7 +10,10 @@
     <link href="{!! asset('css/app.css') !!}" media="all" rel="stylesheet" type="text/css" />
     <script type="text/javascript" src="{!! asset('js/app.js') !!}"></script>
 
-    <title>{{ config('app.name') }}</title>
+	<title>{{ config('app.name') }}</title>
+	
+	{{-- FAV ICON --}}
+	<link rel="shortcut icon" href="https://image.flaticon.com/icons/png/512/195/195460.png">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- Bootstrap core CSS -->
@@ -71,8 +74,8 @@
                                 
                             </h4>
                             <button type="button" class="btn btn-outline-white scroll-join">
-                                Join Us
-                                <i class="fa fa-user-plus ml-2"></i> 
+                               	Reserve a Room
+								   <i class="fa fa-get-pocket ml-3"></i>
                             </button>
                             
 
