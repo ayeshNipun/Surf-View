@@ -24,8 +24,8 @@
 <body>
 
     @include('includes.navbar')
-
-    <button id="myBtn" class="btn btn-outline-dark scroll-top" title="Go to top"> <i class="fa fa-arrow-up"></i> </button>
+	
+	<button id="myBtn" class="btn btn-default scroll-top" title="Go to top"><i class="fa fa-arrow-up" style="color:black;"></i> </button>
     <script>
             // When the user scrolls down 20px from the top of the document, show the button
             window.onscroll = function() {scrollFunction()};
@@ -60,7 +60,8 @@
                         <div class="col-ml-8">
 
                             <!-- Heading -->
-                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2">C H A T T E R</h2>
+                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2" style="font-family:'Calibri', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">S U R F I N G</h2>
+                            <h2 class="display-4 font-weight-bold white-text mb-2">waves</h2>
 
                             <!-- Divider -->
                             <hr class="hr-light">
@@ -212,7 +213,7 @@
             <section id="best-features" class="text-center">
                 <br><br><br><br>
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Features of C H A T T E R</h2>
+                <h2 class="mb-5 font-weight-bold">Our Services</h2>
 
                 <!--Grid row-->
                 <div class="row d-flex justify-content-center mb-4">
