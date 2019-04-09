@@ -1,6 +1,6 @@
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-        <div class="container">
+        <div class="container" style="font-family:Verdana, Geneva, Tahoma, sans-serif;">
 
             <!-- Navbar brand -->
             <a class="navbar-brand" href="#">Surfing Waves</a>
@@ -23,10 +23,13 @@
 
                 <ul class="navbar-nav ml-auto smooth-scroll">
                     <li class="nav-item">
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="#best-features">Services</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#examples">Sign Up</a>
+                        <a class="nav-link" href="#join">Sign Up</a>
                     </li>
                 </ul>
                 <!-- Links -->

@@ -63,7 +63,7 @@
                         <div class="col-ml-8">
 
                             <!-- Heading -->
-                            <h2 class="display-4 font-weight-bold white-text pt-5 mb-2" style="font-family:'Calibri', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">S U R F I N G</h2>
+                            <h2 class="display-4 font-weight-bold white-text pt-5" style="font-family:'Calibri', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;">S U R F I N G</h2>
                             <h2 class="display-4 font-weight-bold white-text mb-2">waves</h2>
 
                             <!-- Divider -->
@@ -73,7 +73,7 @@
                             <h4 class="white-text my-4">
                                 
                             </h4>
-                            <button type="button" class="btn btn-outline-white scroll-join">
+                            <button type="button" class="btn btn-outline-white scroll-join" style="font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif">
                                	Reserve a Room
 								   <i class="fa fa-get-pocket ml-3"></i>
                             </button>
@@ -103,8 +103,121 @@
     <!--Main layout-->
     <main class="mt-5">
         <div class="container">
+			<br><br><br><br>
+			<br><br><br><br>
+			<section id="gallery">
 
-            
+                <!-- Heading -->
+                <h2 class="mb-5 font-weight-bold text-center">Gallery heading</h2>
+
+                <!--Grid row-->
+                <div class="row">
+
+                    <!--Grid column-->
+                    <div class="col-md-6 mb-4">
+
+                        <!--Carousel Wrapper-->
+                        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
+                            <!--Indicators-->
+                            <ol class="carousel-indicators">
+                                <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="3"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="4"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="5"></li>
+                                <li data-target="#carousel-example-1z" data-slide-to="6"></li>
+							</ol>
+                            <!--/.Indicators-->
+                            <!--Slides-->
+                            <div class="carousel-inner z-depth-1-half" role="listbox">
+                                <!--First slide-->
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="https://i.ibb.co/p2sYHq8/Whats-App-Image-2019-04-09-at-11-58-03-AM.jpg" alt="First slide">
+                                </div>
+                                <!--/First slide-->
+                                <!--Second slide-->
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.ibb.co/FYFNv7k/Whats-App-Image-2019-04-09-at-11-58-19-AM.jpg" alt="Second slide">
+                                </div>
+                                <!--/Second slide-->
+                                <!--Third slide-->
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.ibb.co/J3Z2DBg/Whats-App-Image-2019-04-09-at-12-00-51-PM.jpg" alt="Third slide">
+                                </div>
+                                <!--/Third slide-->
+                                <!--Fourth slide-->
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.ibb.co/KbmmDhp/Whats-App-Image-2019-04-09-at-12-07-16-PM.jpg" alt="Fourth slide">
+                                </div>
+                                <!--/Fourth slide-->
+                                <!--Fifth slide-->
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.ibb.co/qmLJZtB/Whats-App-Image-2019-04-09-at-12-13-02-PM.jpg" alt="Fifth slide">
+                                </div>
+                                <!--/Fifth slide-->
+                                <!--Sixth slide-->
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.ibb.co/QvVxDrC/Whats-App-Image-2019-04-09-at-12-15-23-PM.jpg" alt="Sixth slide">
+                                </div>
+                                <!--/Sixth slide-->
+                                <!--Seventh slide-->
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="https://i.ibb.co/GJw9hHK/Whats-App-Image-2019-04-09-at-12-15-43-PM.jpg" alt="Seventh slide">
+                                </div>
+                                <!--/Seventh slide-->
+                            </div>
+                            <!--/.Slides-->
+                            <!--Controls-->
+                            <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                            <!--/.Controls-->
+                        </div>
+                        <!--/.Carousel Wrapper-->
+
+                    </div>
+                    <!--Grid column-->
+
+                    <!--Grid column-->
+                    <div class="col-md-6">
+
+                        <!--Excerpt-->
+                        <a href="" class="teal-text">
+                            <h6 class="pb-1">
+                                <i class="fa fa-heart"></i>
+                                <strong> Lifestyle </strong>
+                            </h6>
+                        </a>
+                        <h4 class="mb-3">
+                            <strong>This is title of the news</strong>
+                        </h4>
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+                            placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
+                            debitis aut rerum.</p>
+
+                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
+                            placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
+                            debitis aut rerum.</p>
+                        <p>by
+                            <a>
+                                <strong>Jessica Clark</strong>
+                            </a>, 26/08/2016</p>
+                        <a class="btn btn-primary btn-md">Read more</a>
+
+                    </div>
+                    <!--Grid column-->
+
+                </div>
+                <!--Grid row-->
+
+			</section>
+			<hr class="my-5">
             <!--Section: Contact-->
             <section id="join">
 <br><br><br><br>
@@ -211,7 +324,8 @@
 
             </section>
             <!--Section: Join-->
-<br><br><br><br><br><br><br>
+{{-- <br><br><br><br><br><br><br> --}}
+<hr class="my-5">
             <!--Section: Best Features-->
             <section id="best-features" class="text-center">
                 <br><br><br><br>
@@ -401,97 +515,8 @@
             <hr class="my-5">
 
             <!--Section: Gallery-->
-            <section id="gallery">
-
-                <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold text-center">Gallery heading</h2>
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-6 mb-4">
-
-                        <!--Carousel Wrapper-->
-                        <div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-                            <!--Indicators-->
-                            <ol class="carousel-indicators">
-                                <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                                <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                                <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-                            </ol>
-                            <!--/.Indicators-->
-                            <!--Slides-->
-                            <div class="carousel-inner z-depth-1-half" role="listbox">
-                                <!--First slide-->
-                                <div class="carousel-item active">
-                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/images/84.jpg" alt="First slide">
-                                </div>
-                                <!--/First slide-->
-                                <!--Second slide-->
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/images/85.jpg" alt="Second slide">
-                                </div>
-                                <!--/Second slide-->
-                                <!--Third slide-->
-                                <div class="carousel-item">
-                                    <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/images/86.jpg" alt="Third slide">
-                                </div>
-                                <!--/Third slide-->
-                            </div>
-                            <!--/.Slides-->
-                            <!--Controls-->
-                            <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                            <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                            <!--/.Controls-->
-                        </div>
-                        <!--/.Carousel Wrapper-->
-
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-6">
-
-                        <!--Excerpt-->
-                        <a href="" class="teal-text">
-                            <h6 class="pb-1">
-                                <i class="fa fa-heart"></i>
-                                <strong> Lifestyle </strong>
-                            </h6>
-                        </a>
-                        <h4 class="mb-3">
-                            <strong>This is title of the news</strong>
-                        </h4>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                            placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
-                            debitis aut rerum.</p>
-
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime
-                            placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus et aut officiis
-                            debitis aut rerum.</p>
-                        <p>by
-                            <a>
-                                <strong>Jessica Clark</strong>
-                            </a>, 26/08/2016</p>
-                        <a class="btn btn-primary btn-md">Read more</a>
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-            </section>
+            
             <!--Section: Gallery-->
-
-            <hr class="my-5">
 
         </div>
     </main>
