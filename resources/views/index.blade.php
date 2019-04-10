@@ -103,12 +103,12 @@
     <!--Main layout-->
     <main class="mt-5">
         <div class="container">
-			<br><br><br><br>
-			<br><br><br><br>
-			<section id="gallery">
 
+			{{-- gallery --}}
+			<section id="gallery">
+					<br><br><br><br>
                 <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold text-center">Gallery heading</h2>
+                <h2 class="mb-5 font-weight-bold text-center">Gallery</h2>
 
                 <!--Grid row-->
                 <div class="row">
@@ -218,9 +218,93 @@
 
 			</section>
 			<hr class="my-5">
-            <!--Section: Contact-->
+
+			{{-- features --}}
+			<section id="services" class="text-center">
+				<br><br><br><br>
+				<!-- Heading -->
+				<h2 class="mb-5 font-weight-bold">Our Services</h2>
+			
+					<!--Grid row-->
+					<div class="row d-flex justify-content-center mb-4">
+			
+						<!--Grid column-->
+						<div class="col-md-8">
+			
+							<!-- Description -->
+									
+			
+						</div>
+						<!--Grid column-->
+			
+					</div>
+					<!--Grid row-->
+	
+					<!--Grid row-->
+					<div class="row">
+						<div class="col-md-4 mb-5">
+							<div class="polaroid">
+								<img src="https://i.ibb.co/fX0vgBF/shutterstock-514422628-e1527484322874.jpg" alt="Norway" class="cardImg">
+								<div class="cardTxt">
+									<p>Hardanger, Norway</p>
+								</div>
+							</div>
+						</div>
+						<!--Grid column-->
+	
+						<!--Grid column-->
+						<div class="col-md-4 mb-1">
+							<div class="polaroid">
+								<img src="https://i.ibb.co/fX0vgBF/shutterstock-514422628-e1527484322874.jpg" alt="Norway" class="cardImg">
+								<div class="cardTxt">
+									<p>Hardanger, Norway</p>
+								</div>
+							</div>
+						</div>
+						<!--Grid column-->
+	
+						<!--Grid column-->
+						<div class="col-md-4 mb-1">
+							<div class="polaroid">
+								<img src="https://i.ibb.co/fX0vgBF/shutterstock-514422628-e1527484322874.jpg" alt="Norway" class="cardImg">
+								<div class="cardTxt">
+									<p>Hardanger, Norway</p>
+								</div>
+							</div>
+						</div>
+						<!--Grid column-->
+					</div>
+					<br><br><br><br>
+					<div class="row">
+						<!--Grid column-->
+						<div class="col-md-4 mb-5">
+							<i class="fa fa-comment fa-4x orange-text"></i>
+							<h4 class="my-4 font-weight-bold">Reliable Messaging</h4>
+						</div>
+						<!--Grid column-->
+	
+						<!--Grid column-->
+						<div class="col-md-4 mb-1">
+							<i class="fa fa-phone fa-4x orange-text"></i>
+							<h4 class="my-4 font-weight-bold">Free and Clear Voice Chat</h4>
+						</div>
+						<!--Grid column-->
+	
+						<!--Grid column-->
+						<div class="col-md-4 mb-1">
+							<i class="fa fa-tachometer fa-4x orange-text"></i>
+							<h4 class="my-4 font-weight-bold">Low Data Usage</h4>
+						</div>
+						<!--Grid column-->
+					</div>
+					<!--Grid row-->
+			
+			</section>
+			<hr class="my-5">
+
+			{{-- join --}}
             <section id="join">
-<br><br><br><br>
+				<br><br><br><br>
                 <!-- Heading -->
                 <h2 class="mb-5 font-weight-bold text-center txtLogin">Join Us</h2>
 
@@ -323,87 +407,11 @@
                 <!--Grid row-->
 
             </section>
-            <!--Section: Join-->
-{{-- <br><br><br><br><br><br><br> --}}
-<hr class="my-5">
-            <!--Section: Best Features-->
-            <section id="best-features" class="text-center">
-                <br><br><br><br>
-                <!-- Heading -->
-                <h2 class="mb-5 font-weight-bold">Our Services</h2>
+			<hr class="my-5">
 
-                <!--Grid row-->
-                <div class="row d-flex justify-content-center mb-4">
-
-                    <!--Grid column-->
-                    <div class="col-md-8">
-
-                        <!-- Description -->
-                        
-
-                    </div>
-                    <!--Grid column-->
-
-                </div>
-                <!--Grid row-->
-
-                <!--Grid row-->
-                <div class="row">
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-5">
-                        <i class="fa fa-lock fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Security</h4>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                        <i class="fa fa-users fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">User Friendly</h4>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                        <i class="fa fa-share-square fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Easy Document Sharing</h4>
-                    </div>
-                    <!--Grid column-->
-                </div>
-<br><br><br><br>
-                <div class="row">
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-5">
-                        <i class="fa fa-comment fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Reliable Messaging</h4>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                        <i class="fa fa-phone fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Free and Clear Voice Chat</h4>
-                    </div>
-                    <!--Grid column-->
-
-                    <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                        <i class="fa fa-tachometer fa-4x orange-text"></i>
-                        <h4 class="my-4 font-weight-bold">Low Data Usage</h4>
-                    </div>
-                    <!--Grid column-->
-                </div>
-                <!--Grid row-->
-
-            </section>
-            <!--Section: Best Features-->
-
-            <hr class="my-5">
-
-            <!--Section: Examples-->
+			{{-- examples --}}
             <section id="examples" class="text-center">
-<br><br><br><br>
+				<br><br><br><br>
                 <!-- Heading -->
                 <h2 class="mb-5 font-weight-bold">Stunning Examples</h2>
 
@@ -510,13 +518,7 @@
                 <!--Grid row-->
 
             </section>
-            <!--Section: Examples-->
-
             <hr class="my-5">
-
-            <!--Section: Gallery-->
-            
-            <!--Section: Gallery-->
 
         </div>
     </main>

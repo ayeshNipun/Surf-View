@@ -5,6 +5,26 @@ header,
     height: 100%;
 }
 
+.polaroid{
+}
+
+.cardImg{
+	width:100%;
+}
+
+.cardImg {
+    display: block;
+    transition:all 0.25s ease;
+}
+
+.cardImg:hover{
+	transform: scale(1.1);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.cardTxt{
+	padding: 10px;
+}
 
 #intro {	
     background: url("https://i.ibb.co/1mNR5Yx/Whats-App-Image-2019-04-09-at-12-07-16-PM.jpg")no-repeat center center fixed;
